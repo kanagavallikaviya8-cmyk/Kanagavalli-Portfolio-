@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral Cloudy Wavey Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">EllaRose</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Animated clouds -->
+        <div class="cloud" style="top: 20%; left: 10%; width: 100px; height: 40px; animation-duration: 30s;"></div>
+        <div class="cloud" style="top: 30%; left: 70%; width: 150px; height: 50px; animation-duration: 25s;"></div>
+        <div class="cloud" style="top: 60%; left: 40%; width: 120px; height: 45px; animation-duration: 35s;"></div>
+        
+        <!-- Floral elements -->
+        <div class="floral" style="top: 15%; left: 5%;">✿</div>
+        <div class="floral" style="top: 25%; left: 90%;">✽</div>
+        <div class="floral" style="top: 75%; left: 10%;">❀</div>
+        <div class="floral" style="top: 80%; left: 85%;">✾</div>
+        
+        <!-- Wave at bottom -->
+        <div class="wave"></div>
+        
+        <!-- Hero content -->
+        <div class="hero-content">
+            <h1>Ella Rose</h1>
+            <p>Web Designer & Frontend Developer</p>
+            <button class="btn">View My Work</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hello! I'm Ella Rose, a passionate web designer and frontend developer with a love for creating beautiful, functional websites. My design aesthetic is inspired by nature, with floral motifs and soft, flowing elements.</p>
+                <p>With over 5 years of experience in the industry, I specialize in creating responsive, user-friendly websites that not only look great but also provide an exceptional user experience.</p>
+                <p>When I'm not coding, you can find me gardening, practicing watercolor painting, or exploring nature trails for inspiration.</p>
+            </div>
+            <div class="about-image">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'><rect width='400' height='400' fill='%238a5a44' opacity='0.2'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%234a2c2c'>Portfolio Image</text></svg>" alt="Ella Rose">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>Creating intuitive and beautiful user interfaces with a focus on user experience.</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-code"></i>
+                <h3>Frontend Development</h3>
+                <p>Building responsive websites using HTML, CSS, JavaScript and modern frameworks.</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive Design</h3>
+                <p>Developing websites that work seamlessly across all devices and screen sizes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <div class="project-img"></div>
+                <div class="project-content">
+                    <h3>Floral E-commerce Site</h3>
+                    <p>An online store for floral arrangements with custom ordering system.</p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-img"></div>
+                <div class="project-content">
+                    <h3>Nature Blog Platform</h3>
+                    <p>A responsive blog platform for nature enthusiasts with custom themes.</p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-img"></div>
+                <div class="project-content">
+                    <h3>Weather App</h3>
+                    <p>A beautiful weather application with floral themes and animations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" rows="5" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <p>© 2023 Ella Rose. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
