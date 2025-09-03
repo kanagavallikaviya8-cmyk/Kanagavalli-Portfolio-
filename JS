@@ -1,0 +1,167 @@
+// JavaScript for interactive elements
+document.addEventListener('DOMContentLoaded', function() {
+    // Create additional floating elements
+    createFloatingElements();
+    
+    // Add scroll event listener for animations
+    window.addEventListener('scroll', handleScroll);
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            document.querySelector('.nav-links').classList.remove('active');
+        });
+    });
+    
+    // Button click effect
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 200);
+        });
+    });
+    
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        this.classList.toggle('active');
+    });
+    
+    // Form submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple form validation
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            
+            if (!nameInput.value || !emailInput.value || !messageInput.value) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    }
+    
+    // Initialize skill bars animation
+    initSkillBars();
+});
+
+// Function to create additional floating elements
+function createFloatingElements() {
+    const body = document.querySelector('body');
+    
+    // Create more clouds
+    for (let i = 0; i < 5; i++) {
+        const cloud = document.createElement('div');
+        cloud.classList.add('cloud');
+        cloud.style.top = Math.random() * 100 + '%';
+        cloud.style.left = Math.random() * 100 + '%';
+        cloud.style.width = Math.random() * 100 + 50 + 'px';
+        cloud.style.height = Math.random() * 30 + 30 + 'px';
+        cloud.style.animationDuration = Math.random() * 20 + 20 + 's';
+        body.appendChild(cloud);
+    }
+    
+    // Create more floral elements
+    const floralSymbols = ['✿', '✽', '❀', '✾', '🌸', '🌺', '🌼'];
+    for (let i = 0; i < 10; i++) {
+        const floral = document.createElement('div');
+        floral.classList.add('floral');
+        floral.innerHTML = floralSymbols[Math.floor(Math.random() * floralSymbols.length)];
+        floral.style.top = Math.random() * 100 + '%';
+        floral.style.left = Math.random() * 100 + '%';
+        floral.style.fontSize = Math.random() * 20 + 20 + 'px';
+        floral.style.animationDuration = Math.random() * 30 + 20 + 's';
+        body.appendChild(floral);
+    }
+}
+
+// Function to handle scroll events for animations
+function handleScroll() {
+    const elements = document.querySelectorAll('.skill, .project');
+    elements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        
+        // If element is in viewport
+        if(position.top < window.innerHeight && position.bottom >= 0) {
+            element.style.opacity = 1;
+            element.style.transform = 'translateY(0)';
+        }
+    });
+}
+
+// Function to initialize skill bars animation
+function initSkillBars() {
+    const skills = [
+        { name: 'UI/UX Design', level: 90 },
+        { name: 'HTML/CSS', level: 85 },
+        { name: 'JavaScript', level: 80 },
+        { name: 'React', level: 75 },
+        { name: 'Responsive Design', level: 95 }
+    ];
+    
+    // This would be used if you want to add animated skill bars
+    // You can implement this feature later
+}
+
+// Function to handle scroll animations for section titles
+function animateOnScroll() {
+    const sectionTitles = document.querySelectorAll('.section-title');
+    
+    sectionTitles.forEach(title => {
+        const position = title.getBoundingClientRect();
+        
+        if(position.top < window.innerHeight - 100) {
+            title.style.opacity = 1;
+            title.style.transform = 'translateY(0)';
+        }
+    });
+}
+
+// Add scroll event listener for section title animations
+window.addEventListener('scroll', animateOnScroll);
+
+// Initialize the page with some elements already animated
+window.addEventListener('load', function() {
+    // Animate hero content
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+        heroContent.style.opacity = 1;
+        heroContent.style.transform = 'translateY(0)';
+    }
+    
+    // Animate section titles in view
+    animateOnScroll();
+    
+    // Animate skills and projects in view
+    handleScroll();
+});
